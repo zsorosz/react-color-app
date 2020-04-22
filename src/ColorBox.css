@@ -25,6 +25,7 @@
     line-height: 30px;
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
     opacity: 0;
 }
 
