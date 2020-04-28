@@ -3,6 +3,8 @@ import { withStyles } from '@material-ui/styles';
 
 const styles = {
     root: {
+        height: "150px",
+        width: "200px",
         backgroundColor: "white",
         border: "1px solid black",
         borderRadius: "5px",
@@ -15,7 +17,7 @@ const styles = {
     },
     colors: {
         backgroundColor: "#dae1e4",
-        height: "100px",
+        height: "120px",
         width: "100%",
         borderRadius: "5px",
         overflow: "hidden"
@@ -26,13 +28,13 @@ const styles = {
         alignItems: "center",
         margin: "0",
         color: "black",
-        paddingTop: "0.5rem",
+        paddingTop: "0.3rem",
         fontSize: "1rem",
         postition: "relative"
     },
     emoji: {
         marginLeft: "0.5rem",
-        fontSize: "1.5rem"
+        fontSize: "1rem"
     },
     miniColor: {
         height: "25%",
@@ -52,7 +54,7 @@ function MiniPalette(props){
     ))
 
     return(
-        <div className={classes.root}>
+        <div className={classes.root} onClick={props.handleClick}>
             <div className={classes.colors}>
                 {miniColorBoxes}
             </div>
