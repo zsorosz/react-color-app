@@ -1,30 +1,37 @@
 export default {
     root: {
         backgroundColor: "blue",
-        maxHeight: "100vh",
+        height: "100vh",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center"
     },
     container: {
-        width: "50%",
-        maxHeight: "100vh",
+        width: "60%",
+        height: "100%",
         display: "flex",
         alignItems: "flex-start",
         flexDirection: "column",
     },
     nav: {
-        height: "10%",
         display: "flex",
         justifyContent: "space-between",
-        color: "white"
+        color: "white",
+        "& h1": {
+            margin: "1rem"
+        }
     },
     palettes: {
         boxSizing: "border-box",
-        maxHeight: "90vh",
         width: "100%",
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 30%)",
-        gridGap: "5%"
+        display: "flex",
+        flexWrap: "wrap",
+        // gridTemplateColumns: "repeat(3, 30%)",
+        // gridGap: "5%"
+    },
+    miniPaletteContainer: {
+        width: "25%",
+        height: "30%",
+        margin: "1rem"
     }
 }

@@ -1,7 +1,7 @@
 export default {
     root: {
-        height: "150px",
-        width: "200px",
+        height: "100%",
+        width: "100%",
         backgroundColor: "white",
         border: "1px solid black",
         borderRadius: "5px",
@@ -14,7 +14,7 @@ export default {
     },
     colors: {
         backgroundColor: "#dae1e4",
-        height: "120px",
+        height: "75%",
         width: "100%",
         borderRadius: "5px",
         overflow: "hidden"
