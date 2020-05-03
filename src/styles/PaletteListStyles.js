@@ -1,7 +1,7 @@
 export default {
     root: {
         backgroundColor: "blue",
-        height: "100vh",
+        height: "100%",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center"
@@ -35,7 +35,7 @@ export default {
     },
     miniPaletteContainer: {
         width: "30%",
-        height: "30%",
+        height: "30vh",
         // margin: "1rem"
     }
 }
