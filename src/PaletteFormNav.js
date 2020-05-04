@@ -23,7 +23,8 @@ const styles = theme => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    height: "64px"
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -99,13 +100,13 @@ class PaletteFormNav extends Component {
                                 validators={['required', 'isPaletteNameUnique']}
                                 errorMessages={['Enter Palette Name', 'Name already used']}
                             />
+                            <Button 
+                                variant="contained" 
+                                color="primary" 
+                                type="submit"
+                                >Save Palette
+                            </Button>
                         </ValidatorForm>
-                        <Button 
-                            variant="contained" 
-                            color="primary" 
-                            type="submit"
-                            >Save Palette
-                        </Button>
                         <Link to="/">
                             <Button variant="contained" color="secondary">Go Back</Button>
                         </Link>
