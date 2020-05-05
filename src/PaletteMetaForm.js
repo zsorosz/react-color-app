@@ -14,10 +14,12 @@ class PaletteMetaForm extends Component {
     constructor(props){
         super(props);
         this.state = {
-            open: true,
+            stage: "form",
             newPaletteName: ""
         };
         this.handleChange = this.handleChange.bind(this);
+        this.showEmojiPicker = this.showEmojiPicker.bind(this);
+        this.savePalette = this.savePalette.bind(this);
     }
     componentDidMount(){
         ValidatorForm.addValidationRule('isPaletteNameUnique', value =>
@@ -34,7 +36,18 @@ class PaletteMetaForm extends Component {
     // handleClickOpen = () => {
     // this.setState({ open: true });
     // };
-    
+    showEmojiPicker(){
+        this.setState({ stage: "emoji" });
+    }
+
+    savePalette(emoji){
+        const newPalette = {
+            paletteName: this.state.newPaletteName,
+            emoji: emoji.native
+        };
+        this.props.handleSubmit(newPalette);
+    }
+
     handleClose = () => {
     this.setState({ open: false });
     };
@@ -44,18 +57,22 @@ class PaletteMetaForm extends Component {
         const { hideForm, handleSubmit } = this.props;
 
         return (
+            <div>
+                <Dialog open={this.state.stage === "emoji"} onClose={hideForm}>
+                    <DialogTitle id="form-dialog-title">Choose a Palette Emoji</DialogTitle>
+                    <Picker title="Pick a Palette Emoji" onSelect={this.savePalette} />
+                </Dialog>
                 <Dialog
-                    open={this.state.open}
+                    open={this.state.stage === "form"}
                     onClose={hideForm}
                     aria-labelledby="form-dialog-title"
                 >
                     <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
-                    <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
+                    <ValidatorForm onSubmit={this.showEmojiPicker}>
                         <DialogContent>
                             <DialogContentText>
                                 Please enter a name for your new palette! Make sure it's unique!
                             </DialogContentText>
-                            <Picker />
                             <TextValidator 
                                 label="Palette Name" 
                                 value={newPaletteName} 
@@ -80,6 +97,7 @@ class PaletteMetaForm extends Component {
                         </DialogActions>
                     </ValidatorForm>
                 </Dialog>
+            </div>
         );
     }
 }
