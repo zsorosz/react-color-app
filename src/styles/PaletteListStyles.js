@@ -1,3 +1,5 @@
+import sizes from './sizes';
+
 export default {
     root: {
         backgroundColor: "blue",
@@ -7,11 +9,14 @@ export default {
         justifyContent: "center"
     },
     container: {
-        width: "60%",
+        width: "50%",
         height: "100%",
         display: "flex",
         alignItems: "flex-start",
         flexDirection: "column",
+        [sizes.down("lg")]: {
+            width: "80%",
+        },
     },
     nav: {
         display: "flex",
@@ -31,11 +36,21 @@ export default {
         justifyContent: "space-between",
         flexWrap: "wrap",
         // gridTemplateColumns: "repeat(3, 30%)",
-        // gridGap: "5%"
+        // gridGap: "5%",
+        [sizes.down("md")]: {
+            width: "80%",
+            margin: "auto"
+        },
     },
     miniPaletteContainer: {
         width: "30%",
         height: "30vh",
-        // margin: "1rem"
+        
+        [sizes.down("md")]: {
+            width: "46%",
+        },
+        [sizes.down("sm")]: {
+            width: "100%",
+        },
     }
 }
