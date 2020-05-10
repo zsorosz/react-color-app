@@ -32,9 +32,6 @@ class PaletteMetaForm extends Component {
             [evt.target.name]: evt.target.value 
         })
     };
-    // handleClickOpen = () => {
-    // this.setState({ open: true });
-    // };
     showEmojiPicker(){
         this.setState({ stage: "emoji" });
     }
@@ -54,16 +51,16 @@ class PaletteMetaForm extends Component {
     
     render() {
         const { newPaletteName } = this.state;
-        const { hideForm } = this.props;
+        const { hideForm, stage } = this.props;
 
         return (
             <div>
-                <Dialog open={this.state.stage === "emoji"} onClose={hideForm}>
+                <Dialog open={stage === "emoji"} onClose={hideForm}>
                     <DialogTitle id="form-dialog-title">Choose a Palette Emoji</DialogTitle>
                     <Picker title="Pick a Palette Emoji" onSelect={this.savePalette} />
                 </Dialog>
                 <Dialog
-                    open={this.state.stage === "form"}
+                    open={stage === "form"}
                     onClose={hideForm}
                     aria-labelledby="form-dialog-title"
                 >

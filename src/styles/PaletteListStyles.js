@@ -47,8 +47,6 @@ export default {
         display: "flex",
         justifyContent: "space-between",
         flexWrap: "wrap",
-        // gridTemplateColumns: "repeat(3, 30%)",
-        // gridGap: "5%",
         [sizes.down("md")]: {
             width: "80%",
             margin: "auto"
