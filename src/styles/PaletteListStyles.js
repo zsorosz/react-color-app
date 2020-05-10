@@ -12,7 +12,7 @@ export default {
         }
     },
     root: {
-        height: "100%",
+        height: "100vh",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center",
