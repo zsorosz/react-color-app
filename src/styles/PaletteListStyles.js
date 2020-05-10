@@ -12,7 +12,7 @@ export default {
         }
     },
     root: {
-        height: "100vh",
+        minHeight: "100vh",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center",
